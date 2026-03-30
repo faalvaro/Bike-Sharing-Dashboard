@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os # Wajib tambahin ini dul buat ngurusin path folder
 
 # Set konfigurasi halaman
 st.set_page_config(page_title="Bike Sharing Dashboard", page_icon="🚲", layout="wide")
@@ -9,8 +10,15 @@ st.set_page_config(page_title="Bike Sharing Dashboard", page_icon="🚲", layout
 # Load data (pakai cache biar kenceng)
 @st.cache_data
 def load_data():
-    days_df = pd.read_csv("day.csv")
-    hours_df = pd.read_csv("hour.csv")
+    # Ambil jalur direktori tempat file dashboard.py ini berada
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Gabungin jalurnya sama nama file CSV
+    day_path = os.path.join(current_dir, "day.csv")
+    hour_path = os.path.join(current_dir, "hour.csv")
+    
+    days_df = pd.read_csv(day_path)
+    hours_df = pd.read_csv(hour_path)
     return days_df, hours_df
 
 try:
