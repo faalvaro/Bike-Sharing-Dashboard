@@ -173,9 +173,8 @@ streamlit run dashboard/app.py
 
 The dashboard can be accessed here:
 
-[Bike Sharing Dashboard - Streamlit App](https://your-streamlit-app-link.streamlit.app/)
+[Bike Sharing Dashboard - Streamlit App](https://bike-sharing-dashboard-2011-2012.streamlit.app/)
 
-> Replace the link above with the deployed Streamlit Cloud URL.
 
 ---
 
